@@ -4,6 +4,7 @@ class MyTheme {
   static Color whiteColor = Colors.white;
   static Color goldPrimary = Color(0xFFB7935F);
   static ThemeData lightTheme = ThemeData(
+    primaryColor: goldPrimary,
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,

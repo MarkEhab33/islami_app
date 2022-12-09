@@ -4,7 +4,7 @@ import 'package:projects/Quraan/Quraan_tab.dart';
 import 'package:projects/home/Radio_tab.dart';
 import 'package:projects/home/sebha_tab.dart';
 import 'package:projects/myThemeData.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home-screen';
 
@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Scaffold(
           appBar: AppBar(
             title: Text(
-              "Islami",
+              AppLocalizations.of(context)!.islami,
               style: Theme.of(context).textTheme.headline1,
             ),
             centerTitle: true,
@@ -46,19 +46,19 @@ class _HomeScreenState extends State<HomeScreen> {
             items: [
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage('assets/images/ic_quraan.png'),),
-                label: 'Quraan'
+                label: AppLocalizations.of(context)!.quran
               ),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/ic_hadeth.png'),),
-                  label: 'Hadeth'
+                  label: AppLocalizations.of(context)!.hadeth
               ),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/ic_sebha.png'),),
-                  label: 'Tasbeh'
+                  label: AppLocalizations.of(context)!.tasbeh
               ),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/ic_radio.png'),),
-                  label: 'Radio'
+                  label: AppLocalizations.of(context)!.radio
               ),
 
             ],

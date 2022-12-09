@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:projects/Hadeth/HadethName.dart';
 import 'package:projects/myThemeData.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 class HadethScreen extends StatefulWidget {
@@ -30,7 +30,7 @@ List<HadethItem> allHadeth =[];
               color: Theme.of(context).primaryColor,
             ),
             Text(
-              'Hadeth Name',
+              AppLocalizations.of(context)!.hadethName,
               style: Theme.of(context).textTheme.subtitle1,
             ),
             Divider(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projects/Quraan/SuranName.dart';
 import '../myThemeData.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class QuraanScreen extends StatelessWidget {
 List<String> names = ["الفاتحه","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود"
   ,"يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه","الأنبياء","الحج","المؤمنون"
@@ -19,15 +19,15 @@ List<String> names = ["الفاتحه","البقرة","آل عمران","الن�
         Center(child: Image.asset('assets/images/quraan_image.png')),
         Divider(
           thickness: 3,
-          color: MyTheme.goldPrimary,
+          color: Theme.of(context).primaryColor,
         ),
         Text(
-          'Sura Name',
+          AppLocalizations.of(context)!.suraName,
           style: Theme.of(context).textTheme.subtitle1,
         ),
         Divider(
           thickness: 3,
-          color: MyTheme.goldPrimary,
+          color: Theme.of(context).primaryColor,
         ),
         Expanded(
           child: ListView.separated(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projects/Hadeth//Hadeth_tab.dart';
 import 'package:projects/Quraan/Quraan_tab.dart';
 import 'package:projects/home/Radio_tab.dart';
+import 'package:projects/Settings/Settings_tab.dart';
 import 'package:projects/home/sebha_tab.dart';
 import 'package:projects/myThemeData.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -60,7 +61,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   icon: ImageIcon(AssetImage('assets/images/ic_radio.png'),),
                   label: AppLocalizations.of(context)!.radio
               ),
-
+              BottomNavigationBarItem(
+                  icon:Icon(Icons.settings),
+                  label: AppLocalizations.of(context)!.settings
+              ),
             ],
           ),
           body:tabs[selectdIndex]
@@ -68,5 +72,5 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
-List<Widget> tabs =[QuraanScreen(),HadethScreen(),SebhaScreen(),RadioScreen()];
+List<Widget> tabs =[QuraanScreen(),HadethScreen(),SebhaScreen(),RadioScreen(),SettingsScreen()];
 }

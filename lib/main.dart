@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       darkTheme: MyTheme.darkTheme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale('ar'),
+      locale: Locale('en'),
       themeMode: ThemeMode.light,
     );
   }

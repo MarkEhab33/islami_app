@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projects/Hadeth//Hadeth_tab.dart';
 import 'package:projects/Quraan/Quraan_tab.dart';
 import 'package:projects/home/Radio_tab.dart';
-import 'package:projects/home/Settings_tab.dart';
+import 'package:projects/Settings/Settings_tab.dart';
 import 'package:projects/home/sebha_tab.dart';
 import 'package:projects/myThemeData.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

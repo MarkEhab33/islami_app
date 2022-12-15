@@ -9,5 +9,9 @@
 "hadethName":"Hadeth Name",
 "language":"Language",
 "english":"English",
-"arabic":"Arabic"
+"arabic":"Arabic",
+"theming":"Theming",
+"light":"Light",
+"dark":"Dark"
+
 }

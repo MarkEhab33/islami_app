@@ -8,7 +8,7 @@ ItemHadethDetails({required this.hadeth});
     return Container(
       padding: EdgeInsets.symmetric(horizontal:12  ),
       child: Text('$hadeth',
-        style: Theme.of(context).textTheme.subtitle1,
+        style: Theme.of(context).primaryTextTheme.subtitle1,
         textAlign: TextAlign.center,
         textDirection: TextDirection.rtl,
       ),

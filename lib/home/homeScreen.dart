@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:projects/Hadeth//Hadeth_tab.dart';
+import 'package:projects/Providers/AppConfigProvider.dart';
 import 'package:projects/Quraan/Quraan_tab.dart';
 import 'package:projects/home/Radio_tab.dart';
 import 'package:projects/Settings/Settings_tab.dart';
 import 'package:projects/home/sebha_tab.dart';
 import 'package:projects/myThemeData.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home-screen';
 
@@ -18,9 +20,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     return Stack(
       children: [
+        provider.isDark()?
         Image.asset(
+          'assets/images/background_dark.png',
+          width: double.infinity,
+          height: double.infinity,
+          fit: BoxFit.fill,
+        ):   Image.asset(
           'assets/images/background_light.png',
           width: double.infinity,
           height: double.infinity,
@@ -30,13 +39,13 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             title: Text(
               AppLocalizations.of(context)!.islami,
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).primaryTextTheme.headline1,
             ),
             centerTitle: true,
           ),
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            backgroundColor: MyTheme.goldPrimary,
+            backgroundColor: Theme.of(context).primaryColor,
             currentIndex:selectdIndex ,
             onTap: (index){
               selectdIndex=index;

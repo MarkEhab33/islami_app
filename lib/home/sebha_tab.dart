@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../Providers/AppConfigProvider.dart';
+import '../myThemeData.dart';
 class SebhaScreen extends StatefulWidget {
   @override
   State<SebhaScreen> createState() => _SebhaScreenState();
@@ -11,18 +15,19 @@ int index =0;
 List<String> tasbehWords=['سبحان الله','استغفر الله','الحمد لله'];
 double rotationAngle=0;
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     return  Container(
 
         child: Column(
           children: [
             Container(
                 margin: EdgeInsets.only(left: 50),
-                child: Image.asset('assets/images/sebha_head.png' ,scale: 1.4,)),
+                child: Image.asset('assets/images/sebha_head.png' ,scale: 1.4,color: provider.isDark()? MyTheme.yellowColor: Theme.of(context).primaryColor ,)),
 
           InkWell(
             child: Transform.rotate(
                 angle: rotationAngle,
-                child: Image.asset('assets/images/sebha_body.png',fit: BoxFit.fill ,scale: .99,)),
+                child: Image.asset('assets/images/sebha_body.png',fit: BoxFit.fill ,scale: .99,color: provider.isDark()? MyTheme.yellowColor: Theme.of(context).primaryColor)),
             onTap:  (){
               tasbehNum++;
               if(tasbehNum%33==0){
@@ -40,14 +45,14 @@ double rotationAngle=0;
             SizedBox(height: 30,),
             Text(
               'عدد التسبيحات',
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).primaryTextTheme.subtitle1,
               textAlign: TextAlign.center,
             ) ,
             SizedBox(height: 30,),
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(25)),
-                color: Color(0xDDB7935F),
+                color:  provider.isDark()? Theme.of(context).primaryColor: Color(0xDDB7935F),
               ),
 
               margin: EdgeInsets.symmetric(horizontal: 160),
@@ -56,7 +61,7 @@ double rotationAngle=0;
               child: Center(
                 child: Text(
                   "$tasbehNum" ,
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: Theme.of(context).primaryTextTheme.subtitle1,
                   textAlign: TextAlign.center,),
               ),
             ),
@@ -64,7 +69,7 @@ double rotationAngle=0;
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(5)),
-                color: Theme.of(context).primaryColor,
+                color: provider.isDark()? MyTheme.yellowColor:Theme.of(context).primaryColor,
               ),
 
               margin: EdgeInsets.symmetric(horizontal: 140),
@@ -73,7 +78,7 @@ double rotationAngle=0;
               child: Center(
                   child:Text(
                     tasbehWords[index],
-                    style: Theme.of(context).textTheme.subtitle2,
+                    style: Theme.of(context).primaryTextTheme.subtitle2,
                     textAlign: TextAlign.center,
                   )
               ),

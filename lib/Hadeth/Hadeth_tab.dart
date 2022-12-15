@@ -3,8 +3,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:projects/Hadeth/HadethName.dart';
+import 'package:projects/Providers/AppConfigProvider.dart';
 import 'package:projects/myThemeData.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 
 class HadethScreen extends StatefulWidget {
@@ -16,6 +18,7 @@ class _HadethScreenState extends State<HadethScreen> {
 List<HadethItem> allHadeth =[];
 
   Widget build(BuildContext context) {
+    var provider= Provider.of<AppConfigProvider>(context);
     if(allHadeth.isEmpty){
       loadHadethfile();
     }
@@ -27,15 +30,15 @@ List<HadethItem> allHadeth =[];
                 child: Image.asset('assets/images/hadeth_image.png')),
             Divider(
               thickness: 3,
-              color: Theme.of(context).primaryColor,
+              color:provider.isDark()?MyTheme.yellowColor:Theme.of(context).primaryColor,
             ),
             Text(
               AppLocalizations.of(context)!.hadethName,
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).primaryTextTheme.subtitle2,
             ),
             Divider(
               thickness: 3,
-              color: Theme.of(context).primaryColor,
+              color:provider.isDark()? MyTheme.yellowColor:Theme.of(context).primaryColor,
             ),
             Expanded(
               flex: 3,

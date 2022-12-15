@@ -9,5 +9,9 @@
 "hadethName":"اسم الحديث",
 "language":"اللغة",
 "english":"الانجليزية",
-"arabic":"العربية"
+"arabic":"العربية",
+"theming":"الاضاءة",
+"light":"نهارى",
+"dark":"ليلى"
+
 }

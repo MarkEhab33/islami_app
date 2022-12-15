@@ -17,7 +17,7 @@ List<String> hadethDetails;
         );
       },
       child: Text( name,
-        style: Theme.of(context).textTheme.subtitle1,
+        style: Theme.of(context).primaryTextTheme.subtitle2,
         textAlign: TextAlign.center,
 
       ),

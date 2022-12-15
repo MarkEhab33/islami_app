@@ -15,7 +15,9 @@ double rotationAngle=0;
 
         child: Column(
           children: [
-          Image.asset('assets/images/sebha_head.png' ,scale: 1.4,),
+            Container(
+                margin: EdgeInsets.only(left: 50),
+                child: Image.asset('assets/images/sebha_head.png' ,scale: 1.4,)),
 
           InkWell(
             child: Transform.rotate(

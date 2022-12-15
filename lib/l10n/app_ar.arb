@@ -6,5 +6,8 @@
 "radio":"الاذاعة",
 "settings":"الاعدادات",
 "suraName":"اسم السورة",
-"hadethName":"اسم الحديث"
+"hadethName":"اسم الحديث",
+"language":"اللغة",
+"english":"الانجليزية",
+"arabic":"العربية"
 }
